@@ -1,5 +1,7 @@
 class ParksController < ApplicationController
 
+  before_filter :need_login, only: ['show']
+
   def index
     if params[:name].present?
       @parks = Park.where("name like ?", "%#{params[:name]}%")
@@ -38,6 +40,13 @@ class ParksController < ApplicationController
       }
     end
 
+  end
+
+  private
+  def need_login
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
 end
