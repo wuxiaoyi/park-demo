@@ -1,28 +1,9 @@
-== README
+ruby on rails env: https://ruby-china.org/wiki/install_ruby_guide
+guides: http://guides.ruby-china.org/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+配置项目:
+1.安好环境之后，项目下面执行bundle install
+2.用的数据库表结构在lib/tasks下
+3.创建数据库park_db，或者把config/database.yml里的数据库配置改成你的
+4.执行rake db:migrate
+5.rails s 启动服务，访问地址localhost:3000
