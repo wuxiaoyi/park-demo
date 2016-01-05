@@ -1,0 +1,29 @@
+<div class="row parks-page-list" id="parks_list">
+  <% parks.each do |park| %>
+    <% valid_slots = park.valid_slots %>
+    <%= link_to park_path(park), class: 'col-md-3 pglist__item' do %>
+      <div class="pglist__item-content <%= valid_slots.count > 0 ? 'valid' : 'not-valid' %>">
+        <% if valid_slots.count > 0 %>
+          <p class="pglist__item-valid">
+            Surplus:<%= valid_slots.count %>
+          </p>
+        <% else %>
+          <span class="glyphicon glyphicon-remove icon-lg"></span>
+        <% end %>
+        <p class="pglist__item-name">
+          <%= park.name %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="col-md-3 pglist__item">
+    <div class="pglist__item-content not-valid">
+      <span class="glyphicon glyphicon-remove icon-lg"></span>
+      <h4>
+        mock
+      </h4>
+    </div>
+  </div>
+
+</div>

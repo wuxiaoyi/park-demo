@@ -21,3 +21,15 @@ window.Slots =
         $('#slots_list').replaceWith(response.html)
         @initToolTip()
 
+window.Parks = 
+  init: ->
+    setInterval => 
+      @getParksinfo()
+    , 60000
+  getParksinfo: ->
+    $.ajax
+      url: window.location.href
+      type: "GET"
+      dataType: "json"
+      success: (response)=>
+        $('#parks_list').replaceWith(response.html)

@@ -6,6 +6,16 @@ class ParksController < ApplicationController
     else
       @parks = Park.all
     end
+    respond_to do |format|
+      format.json {
+        render json: {
+          :html => render_to_string(:partial => 'parks/index_item', :formats => :html, :locals => { :parks => @parks })
+        }
+      }
+      format.html{
+
+      }
+    end
   end
 
   def show
