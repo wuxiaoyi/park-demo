@@ -1,0 +1,8 @@
+<div class="container parks-page">
+  <%= render partial: 'show_item', formats: :html, locals: { slots: @slots }  %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    Slots.init();
+  })
+</script>

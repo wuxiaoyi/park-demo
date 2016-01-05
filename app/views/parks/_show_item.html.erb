@@ -1,0 +1,24 @@
+<div class="row parks-page-list" id="slots_list">
+  <% slots.each do |slot| %>
+    <div class="col-md-3 pglist__item js_slot_item" data-toggle="tooltip" title="<%= raw slot_history(@slots_all[slot.s_id].last(5)) %>">
+      <div class="pglist__item-content <%= slot.is_valid? ? 'valid' : 'not-valid' %>">
+        <p class="pglist__item-name">
+          slot:<%= slot.s_id %>
+        </p>
+        <p class="pglist__item-name">
+          <% if slot.is_valid? %>
+            free time:
+          <% else %>
+            holding time:
+          <% end %>
+          <br/>
+          <% if slot.end_time.present? %>
+            <%= distance_of_time_in_words slot.end_time, slot.begin_time %>
+          <% else %>
+            <%= distance_of_time_in_words Time.now, slot.begin_time %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

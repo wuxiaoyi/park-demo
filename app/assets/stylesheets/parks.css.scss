@@ -1,0 +1,54 @@
+.parks-page{
+  text-align: center;
+}
+.parks-page-list{
+  padding: 10px;
+  .pglist__item{
+    padding: 10px;
+    .pglist__item-content{
+      height: 150px;
+      padding-top: 30px;
+    }
+    .pglist__item-name{
+      font-size: 20px;
+    }
+    .pglist__item-valid{
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+  .icon-lg{
+    font-size: 50px;
+  }
+  .valid{
+    background-color: #CAFFFF;
+    &:hover, &.hover {
+      background: #A6FFFF;
+    }
+  }
+  .not-valid{
+    background-color: #FFD2D2;
+    &:hover, &.hover {
+      background: #FF9797;
+    }
+  }
+  .tooltip.bottom{
+    .tooltip-arrow{
+      border-bottom-color: #3C3C3C;
+    }
+    .tooltip-inner{
+      background-color: #3C3C3C;
+    }
+  }
+  p{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    &:hover, &.hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
